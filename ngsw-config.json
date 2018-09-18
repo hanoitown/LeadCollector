@@ -9,6 +9,11 @@
         "/index.html",
         "/*.css",
         "/*.js"
+      ],
+      "versionedFiles": [
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
       ]
     }
   }, {
@@ -18,6 +23,9 @@
     "resources": {
       "files": [
         "/assets/**"
+      ],
+      "urls": [
+        "https://cataas.com/**"
       ]
     }
   }]
