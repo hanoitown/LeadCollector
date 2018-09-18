@@ -1,0 +1,71 @@
+{
+  "configVersion": 1,
+  "index": "/LeadCollector/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/LeadCollector/favicon.ico",
+        "/LeadCollector/index.html",
+        "/LeadCollector/main.5db8cc3a5a3ee797465f.js",
+        "/LeadCollector/polyfills.7a0e6866a34e280f48e7.js",
+        "/LeadCollector/runtime.a66f828dca56eeb90e02.js",
+        "/LeadCollector/styles.53c58055c64c97161adf.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/LeadCollector/assets/icons/icon-128x128.png",
+        "/LeadCollector/assets/icons/icon-144x144.png",
+        "/LeadCollector/assets/icons/icon-152x152.png",
+        "/LeadCollector/assets/icons/icon-192x192.png",
+        "/LeadCollector/assets/icons/icon-384x384.png",
+        "/LeadCollector/assets/icons/icon-512x512.png",
+        "/LeadCollector/assets/icons/icon-72x72.png",
+        "/LeadCollector/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/LeadCollector/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/LeadCollector/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/LeadCollector/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/LeadCollector/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/LeadCollector/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/LeadCollector/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/LeadCollector/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/LeadCollector/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/LeadCollector/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/LeadCollector/index.html": "5b4dff4a932ec6528adb8d09327ffcbf75b28de5",
+    "/LeadCollector/main.5db8cc3a5a3ee797465f.js": "1971ad62fcd065e935cfa18bec49bb2f1997d3d7",
+    "/LeadCollector/polyfills.7a0e6866a34e280f48e7.js": "9f0b8341c0a0caec1581da2f255eb5dbb8e12303",
+    "/LeadCollector/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "/LeadCollector/styles.53c58055c64c97161adf.css": "810136c0e45855d89e6ea8e18171dc29509c3464"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
