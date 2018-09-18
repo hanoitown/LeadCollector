@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "name": "Ha Nguyen",
+      "phone": "3059602018",
+      "address": "150 Alhambra circle",
+      "dob": "2018-09-18T17:00:00.000Z",
+      "gender": "Male",
+      "email": "ha@vintec.vn",
+      "id": 1
+    },
+    {
+      "name": "Ha Nguyen",
+      "phone": "3059602018",
+      "address": "150 Alhambra circle",
+      "dob": "2018-09-18T17:00:00.000Z",
+      "gender": "Female",
+      "email": "ha@vintec.vn",
+      "id": 2
+    },
+    {
+      "name": "TTTT",
+      "phone": "3059602018",
+      "address": "150 Alhambra circle",
+      "dob": "2018-09-18T17:00:00.000Z",
+      "gender": "Male",
+      "email": "ha@vintec.vn",
+      "id": 3
+    }
+  ]
+}

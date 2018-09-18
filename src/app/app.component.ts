@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styles: [
+    `
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    `
+  ]
 })
 export class AppComponent {
-  title = 'Lead collector';
+  title = "AnnHome RealEstate";
 }

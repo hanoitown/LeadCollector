@@ -1,4 +1,8 @@
 <mat-toolbar color="primary">
-  {{ title }}
+  <a routerLink="/">{{ title }}</a>
 </mat-toolbar>
-<app-image-card></app-image-card>
+<!-- <app-image-card></app-image-card> -->
+<main>
+  <!-- <app-lead-edit></app-lead-edit> -->
+  <router-outlet></router-outlet>
+</main>

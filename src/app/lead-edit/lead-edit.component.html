@@ -1,0 +1,68 @@
+<mat-card>
+  <!-- Title of an Card -->
+  <mat-card-header>
+    <mat-card-title>
+      <!-- VIP information -->
+    </mat-card-title>
+  </mat-card-header>
+  <!-- Actual content starts from here -->
+  <mat-card-content>
+    <form class="frmEdit" [formGroup]="regiForm" (submit)="onFormSubmit(regiForm.value)">
+
+      <mat-form-field class="demo-full-width">
+        <input type="tel" formControlName="phone" matInput placeholder="Phone number">
+        <mat-error>
+          <span *ngIf="!regiForm.get('phone').valid && regiForm.get('phone').touched">Please enter phone !!!</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="demo-full-width">
+        <input formControlName="name" matInput placeholder="Name">
+        <mat-error>
+          <span *ngIf="!regiForm.get('name').valid && regiForm.get('name').touched">Please enter Name !!!</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-list>
+        <span>Gender</span><br><br>
+        <mat-radio-group class="radio-group" formControlName="gender">
+          <mat-radio-button class="radio-button" matInput value="Male">Male</mat-radio-button>
+          <mat-radio-button class="radio-button" matInput value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-error>
+          <span *ngIf="!regiForm.get('gender').valid && regiForm.get('gender').touched">Please select any gender !!!</span>
+        </mat-error>
+      </mat-list>
+
+      <mat-form-field class="demo-full-width">
+        <textarea formControlName="address" matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2"
+          matAutosizeMaxRows="5"></textarea>
+        <mat-error>
+          <span *ngIf="!regiForm.get('address').valid && regiForm.get('address').touched">Please enter proper address
+            !!!</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="demo-full-width">
+        <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="Date of birth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+        <mat-error>
+          <span *ngIf="!regiForm.get('dob').valid && regiForm.get('dob').touched">Please select any Date !!!</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="demo-full-width">
+        <input type="email" formControlName="email" matInput placeholder="Email">
+        <mat-error>
+          <span *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">Enter proper email !!!</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div style="padding-top: 20px;">
+        <button mat-raised-button color="basic" routerLink="/editSuccess" disabled>Edit</button>
+        <button mat-raised-button color="primary" [disabled]="!regiForm.valid && !this.submitted">Confirm</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
