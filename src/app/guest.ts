@@ -1,8 +1,13 @@
 export class Guest {
   name: string = "";
   phone: string = "";
-  address: string = "";
-  dob: Date = null;
+  note: string = "";
+  // dob: Date = null;
   gender: string = "";
   email: string = "";
+}
+
+export class GuestResult{
+  count: number = 0;
+  items: Guest[];
 }

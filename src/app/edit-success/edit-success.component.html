@@ -2,21 +2,22 @@
   <mat-card-header>
     <mat-card-title>
       <h3>Guests</h3>
+      <span> (Total registered: {{this.result.count}})</span>
     </mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
 
     <mat-list>
-      <mat-list-item *ngFor="let guest of guests">
-        <h4 mat-line>{{guest.name}}</h4>
+      <mat-list-item *ngFor="let guest of this.result.items">
+        <h4 mat-line>{{guest.name}} - {{guest.gender}}</h4>
         <p mat-line> {{guest.phone}} </p>
       </mat-list-item>
     </mat-list>
 
-    
+
   </mat-card-content>
   <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/leadEdit">New welcome</button>
-    </mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/leadEdit">New welcome</button>
+  </mat-card-actions>
 </mat-card>

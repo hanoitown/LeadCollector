@@ -8,7 +8,7 @@
   <!-- Actual content starts from here -->
   <mat-card-content>
     <form class="frmEdit" [formGroup]="regiForm" (submit)="onFormSubmit(regiForm.value)">
-
+      <div *ngIf="this.message">{{this.message}}</div>
       <mat-form-field class="demo-full-width">
         <input type="tel" formControlName="phone" matInput placeholder="Phone number">
         <mat-error>
@@ -35,14 +35,20 @@
       </mat-list>
 
       <mat-form-field class="demo-full-width">
-        <textarea formControlName="address" matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2"
-          matAutosizeMaxRows="5"></textarea>
+        <input type="email" formControlName="email" matInput placeholder="Email">
         <mat-error>
-          <span *ngIf="!regiForm.get('address').valid && regiForm.get('address').touched">Please enter proper address
-            !!!</span>
+          <span *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">Enter proper email !!!</span>
         </mat-error>
       </mat-form-field>
 
+      <mat-form-field class="demo-full-width">
+        <textarea formControlName="note" matInput placeholder="note" matTextareaAutosize matAutosizeMinRows="3"
+          matAutosizeMaxRows="5"></textarea>
+        <mat-error>
+          <span *ngIf="!regiForm.get('note').valid && regiForm.get('note').touched">Note</span>
+        </mat-error>
+      </mat-form-field>
+      <!-- 
       <mat-form-field class="demo-full-width">
         <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="Date of birth">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -52,15 +58,10 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="demo-full-width">
-        <input type="email" formControlName="email" matInput placeholder="Email">
-        <mat-error>
-          <span *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">Enter proper email !!!</span>
-        </mat-error>
-      </mat-form-field>
+       -->
 
       <div style="padding-top: 20px;">
-        <button mat-raised-button color="basic" routerLink="/editSuccess" disabled>Edit</button>
+        <button mat-raised-button color="basic" routerLink="/editSuccess" style="margin-right: 10px">Back</button>
         <button mat-raised-button color="primary" [disabled]="!regiForm.valid && !this.submitted">Confirm</button>
       </div>
     </form>

@@ -4,7 +4,7 @@ import { LeadEditComponent } from "./lead-edit/lead-edit.component";
 import { EditSuccessComponent } from "./edit-success/edit-success.component";
 
 const routes = [
-  { path: "", redirectTo: "/editSuccess", pathMatch: "full" },
+  { path: "", redirectTo: "editSuccess", pathMatch: "full" },
   { path: "leadEdit", component: LeadEditComponent },
   { path: "editSuccess", component: EditSuccessComponent }
 ];

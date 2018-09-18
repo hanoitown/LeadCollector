@@ -16,6 +16,9 @@ import { Router } from "@angular/router";
         width: 100%;
       }
 
+      .demo-full-width {
+        width: 100%;
+      }
       .radio-group {
         display: inline-flex;
         flex-direction: column;
@@ -31,6 +34,7 @@ export class LeadEditComponent implements OnInit {
   regiForm: FormGroup;
   guest: Guest;
   submitted: boolean = false;
+  message: string;
   // name: string = "";
   // phone: string = "";
   // address: string = "";
@@ -47,10 +51,10 @@ export class LeadEditComponent implements OnInit {
     this.regiForm = fb.group({
       name: [null, Validators.required],
       phone: [null, Validators.required],
-      address: "",
-      dob: [null],
-      gender: [null, Validators.required],
-      email: [null, Validators.compose([Validators.required, Validators.email])]
+      note: "",
+      // dob: [null],
+      gender: ["Male", Validators.required],
+      email: [null, Validators.compose([Validators.email])]
     });
   }
 
@@ -70,10 +74,13 @@ export class LeadEditComponent implements OnInit {
 
     this.guest = { ...this.guest, ...this.regiForm.value };
 
-    this.db.saveProfile(this.guest).subscribe(res => {
-      console.log(JSON.stringify(res));
-      this.submitted = true;
-      this.router.navigate(["editSuccess"]);
-    });
+    this.db.saveProfile(this.guest).subscribe(
+      res => {
+        console.log(JSON.stringify(res));
+        this.submitted = true;
+        this.router.navigate(["editSuccess"]);
+      },
+      error => (this.message = "Duplicate phone number")
+    );
   }
 }
