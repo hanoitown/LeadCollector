@@ -28,6 +28,16 @@ export class DbService {
   }
 
   getAll(): Observable<GuestResult> {
-    return this.http.get<GuestResult>(`${this.endpoint}/?$count=true&$skip=0&$top=5&$orderby=Created%20desc`, this.httpOptions);
+    return this.http.get<GuestResult>(
+      `${this.endpoint}/?$count=true&$skip=0&$top=5&$orderby=Created%20desc`,
+      this.httpOptions
+    );
+  }
+
+  getGuestList(search, pageIndex, pageSize): Observable<GuestResult> {
+    return this.http.get<GuestResult>(
+      `${this.endpoint}/?$count=true&$skip=${pageIndex*pageSize}&$top=${pageSize}&$orderby=Created%20desc&$filter=contains(Name,'${search}') or contains(Phone,'${search}')`,
+      this.httpOptions
+    );
   }
 }

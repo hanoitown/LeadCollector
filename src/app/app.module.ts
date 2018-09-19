@@ -5,7 +5,7 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
-  MatIconModule,
+  // MatIconModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
@@ -17,8 +17,12 @@ import {
   MatSlideToggleModule,
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
-  MatListModule
+  MatListModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
+import {MatIconModule} from '@angular/material/icon';
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { ImageCardComponent } from "./image-card/image-card.component";
@@ -30,13 +34,15 @@ import { DbService } from "./db.service";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from ".//app-routing.module";
 import { EditSuccessComponent } from "./edit-success/edit-success.component";
+import { SafeUrlPipe } from './safe-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageCardComponent,
     LeadEditComponent,
-    EditSuccessComponent
+    EditSuccessComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,9 @@ import { EditSuccessComponent } from "./edit-success/edit-success.component";
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
+    MatPaginatorModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register("./ngsw-worker.js", {
       enabled: environment.production
@@ -83,7 +91,9 @@ import { EditSuccessComponent } from "./edit-success/edit-success.component";
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
+    MatPaginatorModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]

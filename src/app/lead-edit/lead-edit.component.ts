@@ -31,6 +31,9 @@ import { Router } from "@angular/router";
       .error {
         color: red;
       }
+      .name {
+        text-transform: capitalize;
+      }
     `
   ]
 })
