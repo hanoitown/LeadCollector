@@ -27,6 +27,10 @@ import { Router } from "@angular/router";
       .radio-button {
         margin: 5px;
       }
+
+      .error {
+        color: red;
+      }
     `
   ]
 })
@@ -50,7 +54,14 @@ export class LeadEditComponent implements OnInit {
     // To initialize FormGroup
     this.regiForm = fb.group({
       name: [null, Validators.required],
-      phone: [null, Validators.required],
+      phone: [
+        null,
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(11)
+        ])
+      ],
       note: "",
       // dob: [null],
       gender: ["Male", Validators.required],
@@ -80,7 +91,9 @@ export class LeadEditComponent implements OnInit {
         this.submitted = true;
         this.router.navigate(["editSuccess"]);
       },
-      error => (this.message = "Duplicate phone number")
+      error => {
+        this.message = "Duplicate phone number";
+      }
     );
   }
 }
